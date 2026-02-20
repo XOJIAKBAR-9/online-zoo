@@ -1,0 +1,20 @@
+{
+  "name": "online-zoo",
+  "version": "1.0.0",
+  "description": "Online Zoo - Watch Your Favorite Animal Online",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "start": "live-server"
+  },
+  "keywords": [
+    "zoo",
+    "animals",
+    "webcam"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
