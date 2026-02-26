@@ -18,46 +18,6 @@ body {
     margin: 0 auto;
 }
 
-/* ================= HEADER ================= */
-
-.header {
-    background: #f58220;
-    padding: 20px 0;
-}
-
-.header__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.nav__list {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav__list a {
-    text-decoration: none;
-    color: #2c1b47;
-    font-weight: 600;
-}
-
-.nav__list a.active {
-    color: #008080;
-}
-
-.socials img {
-    width: 22px;
-    margin-left: 15px;
-    cursor: pointer;
-}
-
 /* ================= MAP SECTION ================= */
 
 .map-section {
