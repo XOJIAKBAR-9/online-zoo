@@ -1,81 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Map | Online Zoo</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="../components/header.style.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map | Online Zoo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../components/header.style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
     <!-- Header/Navigation -->
     <div id="header-placeholder"></div>
 
     <!-- ================= MAP SECTION ================= -->
     <main class="map-section">
-        <div class="container">
+      <div class="container">
+        <h1 class="map-section__title">
+          FIND WHERE ARE <br />
+          THE ANIMALS LIVE
+        </h1>
 
-            <h1 class="map-section__title">
-                FIND WHERE ARE <br> THE ANIMALS LIVE
-            </h1>
+        <div class="map-wrapper">
+          <img
+            src="../../assets/images/Map.png"
+            alt="World Map"
+            class="map-image"
+          />
 
-            <div class="map-wrapper">
-
-                <img 
-                    src="../../assets/images/Map.png" 
-                    alt="World Map"
-                    class="map-image"
-                />
-
-                <!-- Markers -->
-                <img src="../../assets/images/marker-eagle.png" class="map-marker eagle" alt="Eagle">
-                <img src="../../assets/images/marker-crocodile.png" class="map-marker crocodile" alt="Crocodile">
-                <img src="../../assets/images/marker-lion.png" class="map-marker lion" alt="Lion">
-                <img src="../../assets/images/marker-gorilla.png" class="map-marker gorilla" alt="Gorilla">
-                <img src="../../assets/images/marker-tiger.png" class="map-marker tiger" alt="Tiger">
-                <img src="../../assets/images/marker-lemur.png" class="map-marker lemur" alt="Lemur">
-                <img src="../../assets/images/marker-koala.png" class="map-marker koala" alt="Koala">
-                <img src="../../assets/images/marker-panda.png" class="map-marker panda" alt="Panda">
-
-            </div>
-
+          <!-- Markers -->
+          <img
+            src="../../assets/images/marker-eagle.png"
+            class="map-marker eagle"
+            alt="Eagle"
+          />
+          <img
+            src="../../assets/images/marker-crocodile.png"
+            class="map-marker crocodile"
+            alt="Crocodile"
+          />
+          <img
+            src="../../assets/images/marker-lion.png"
+            class="map-marker lion"
+            alt="Lion"
+          />
+          <img
+            src="../../assets/images/marker-gorilla.png"
+            class="map-marker gorilla"
+            alt="Gorilla"
+          />
+          <img
+            src="../../assets/images/marker-tiger.png"
+            class="map-marker tiger"
+            alt="Tiger"
+          />
+          <img
+            src="../../assets/images/marker-lemur.png"
+            class="map-marker lemur"
+            alt="Lemur"
+          />
+          <img
+            src="../../assets/images/marker-koala.png"
+            class="map-marker koala"
+            alt="Koala"
+          />
+          <img
+            src="../../assets/images/marker-panda.png"
+            class="map-marker panda"
+            alt="Panda"
+          />
         </div>
+      </div>
     </main>
 
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
-        <div class="container footer__container">
+      <div class="container footer__container">
+        <div class="footer__top">
+          <div class="footer__logos">
+            <span>online ZOO</span>
+            <span>RS School</span>
+          </div>
 
-            <div class="footer__top">
-                <div class="footer__logos">
-                    <span>online ZOO</span>
-                    <span>RS School</span>
-                </div>
+          <ul class="footer__nav">
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">MAP</a></li>
+            <li><a href="#">ZOOS</a></li>
+            <li><a href="#">CONTACT US</a></li>
+          </ul>
 
-                <ul class="footer__nav">
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">MAP</a></li>
-                    <li><a href="#">ZOOS</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-                </ul>
-
-                <button class="footer__btn">
-                    DONATE FOR VOLUNTEERS →
-                </button>
-            </div>
-
-            <div class="footer__bottom">
-                <p>© 2021 DinaK</p>
-                <div class="footer__socials">
-                    <img src="../../assets/icons/YouTube.png" alt="YouTube">
-                    <img src="../../assets/icons/Instagram.png" alt="Instagram">
-                    <img src="../../assets/icons/Facebook.png" alt="Facebook">
-                </div>
-            </div>
-
+          <button class="footer__btn">DONATE FOR VOLUNTEERS →</button>
         </div>
-    </footer>
 
-</body>
+        <div class="footer__bottom">
+          <p>© 2021 DinaK</p>
+          <div class="footer__socials">
+            <img src="../../assets/icons/YouTube.png" alt="YouTube" />
+            <img src="../../assets/icons/Instagram.png" alt="Instagram" />
+            <img src="../../assets/icons/Facebook.png" alt="Facebook" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

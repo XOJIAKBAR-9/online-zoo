@@ -18,8 +18,8 @@ body {
 
 /* SIDEBAR */
 .sidebar {
-  position: fixed;
-  top: 70px;
+  position: absolute;
+  top: 94px;
   left: 0;
   width: 80px;
   height: 100%;
