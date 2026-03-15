@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation - Step 1: Choose Amount</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="../../../../dist/pages/donation/step1.js" defer></script>
+  </head>
+  <body>
+    <div class="step-container">
+      <!-- Hero Section (Optional) -->
+      <div class="step-header">
+        <h1>Make a Difference Today</h1>
+        <p>Your donation helps protect and preserve wildlife</p>
+      </div>
+
+      <!-- Step 1 Form -->
+      <div class="step-form step-1">
+        <div class="form-card">
+          <div class="form-header">
+            <h2>Make Your Donation</h2>
+          </div>
+          
+          <form class="donation-form" id="donationStep1Form">
+            <div class="form-body">
+              <p class="section-label">Donation Information:</p>
+              <hr class="divider" />
+              
+              <p class="field-label"><span>*</span> Choose your donation amount:</p>
+              <div class="amount-grid" id="amountGrid">
+                <button class="btn-amount" data-amount="10" type="button">$10</button>
+                <button class="btn-amount" data-amount="20" type="button">$20</button>
+                <button class="btn-amount" data-amount="30" type="button">$30</button>
+                <button class="btn-amount" data-amount="50" type="button">$50</button>
+                <button class="btn-amount" data-amount="80" type="button">$80</button>
+                <button class="btn-amount" data-amount="100" type="button">$100</button>
+              </div>
+              
+              <div class="form-row">
+                <button id="step1OtherBtn" class="btn-label" type="button">Other Amount</button>
+                <input
+                  class="input-text"
+                  type="number"
+                  id="otherAmount"
+                  placeholder=""
+                  min="1"
+                  aria-label="Enter custom donation amount"
+                />
+              </div>
+              
+              <div class="form-row">
+                <button class="btn-label" type="button">For Special Pet</button>
+                <div class="select-wrapper">
+                  <select id="petSelect" aria-label="Choose your favourite pet">
+                    <option value="" disabled selected>Choose your favourite</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="checkbox-row">
+                <input type="checkbox" id="recurringGift" />
+                <label for="recurringGift">Make this a monthly recurring gift</label>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <div class="step-dots" aria-label="Step 1 of 3">
+                <div class="dot active" title="Step 1"></div>
+                <div class="dot" title="Step 2"></div>
+                <div class="dot" title="Step 3"></div>
+              </div>
+              <button type="button" class="btn-next" id="nextBtn">
+                Next <span class="arrow">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

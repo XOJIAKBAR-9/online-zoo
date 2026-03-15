@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "live-server --port=3000",
-    "start": "live-server"
+    "start": "live-server",
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts"
   },
   "keywords": [
     "zoo",
@@ -15,6 +17,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.3",
+    "live-server": "^1.2.2",
+    "openapi-typescript": "^7.13.0",
+    "typescript": "^5.9.3"
   }
 }

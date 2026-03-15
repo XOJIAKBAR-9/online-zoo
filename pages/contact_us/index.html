@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../components/header.style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../donation/style.css">
+    <script type="module" src="../../dist/pages/contact_us.js" defer></script>
+    <script type="module" src="../../dist/pages/donationStep1.js" defer></script>
+    <script type="module" src="../../dist/pages/donationStep2.js" defer></script>
+    <script type="module" src="../../dist/components/header.js" defer></script>
+    <script type="module" src="../../dist/pages/donation.js" defer></script>
 </head>
 <body>
 
@@ -71,6 +76,161 @@
             <p>© 2021 DinaK</p>
         </div>
     </footer>
+
+    <!-- Donation Modal -->
+    <div class="modal-overlay" id="donationModal" style="display: none;">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal__hero">
+                <img
+                    src="/assets/images/image 129.png"
+                    alt="Together we care, save and protect wildlife"
+                    class="modal__hero-img"
+                />
+                <button class="modal__close" aria-label="Close donation modal">×</button>
+            </div>
+
+            <div class="modal__body">
+                <h2 class="modal__title" id="modalTitle">
+                    Together We Care,<br>Save and Protect!
+                </h2>
+
+                <p class="modal__description">
+                    Your most generous gift not only cares for countless animals,
+                    but it also offers hope and a vital lifeline to the world's most
+                    endangered wildlife relying on us to survive.
+                </p>
+
+                <div class="modal__buttons">
+                    <button class="btn-donation" data-amount="20">$20</button>
+                    <button class="btn-donation" data-amount="30">$30</button>
+                    <button class="btn-donation" data-amount="50">$50</button>
+                    <button class="btn-donation" data-amount="80">$80</button>
+                    <button class="btn-donation" data-amount="100">$100</button>
+                    <button class="btn-donation btn-donation--other" data-amount="custom">Other Amount</button>
+                </div>
+
+                <div class="custom-amount-section" style="display: none;">
+                    <input
+                        type="number"
+                        class="custom-amount-input"
+                        placeholder="Enter amount"
+                        min="1"
+                        max="999999"
+                    />
+                    <button class="btn-custom-submit">DONATE →</button>
+                    <button class="btn-custom-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" style="display: none;"></div>
+
+    <!-- Donation Form Step1 Popup -->
+    <div class="overlay" id="donationStep1" style="display: none;">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="step1Title">
+        <div class="modal__header">
+          <h2 id="step1Title">Make Your Donation</h2>
+        </div>
+        <div class="modal__body">
+          <p class="section-label">Donation Information:</p>
+          <hr class="divider" />
+          <p class="field-label"><span>*</span> Choose your donation amount:</p>
+          <div class="amount-grid" id="amountGrid">
+            <button class="btn-amount" data-amount="10">$10</button>
+            <button class="btn-amount" data-amount="20">$20</button>
+            <button class="btn-amount" data-amount="30">$30</button>
+            <button class="btn-amount" data-amount="50">$50</button>
+            <button class="btn-amount" data-amount="80">$80</button>
+            <button class="btn-amount" data-amount="100">$100</button>
+          </div>
+          <div class="form-row">
+            <button id="step1OtherBtn" class="btn-label" type="button">Other Amount</button>
+            <input
+              class="input-text"
+              type="number"
+              id="otherAmount"
+              placeholder=""
+              min="1"
+              aria-label="Enter custom donation amount"
+            />
+          </div>
+          <div class="form-row">
+            <button class="btn-label" type="button">For Special Pet</button>
+            <div class="select-wrapper">
+              <select id="petSelect" aria-label="Choose your favourite pet">
+                <option value="" disabled selected>Choose your favourite</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="recurringGift" />
+            <label for="recurringGift">Make this a monthly recurring gift</label>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <div class="step-dots" aria-label="Step 1 of 3">
+            <div class="dot active" title="Step 1"></div>
+            <div class="dot" title="Step 2"></div>
+            <div class="dot" title="Step 3"></div>
+          </div>
+          <button class="btn-next">
+            Next <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Donation Form Step2 Popup -->
+    <div class="overlay" id="donationStep2" style="display: none;">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="step2Title">
+        <div class="modal-header">
+          <h2 id="step2Title">Make Your Donation</h2>
+        </div>
+        <div class="modal-body">
+          <div class="billing-header">Billing Information:</div>
+          <hr class="divider" />
+
+          <form>
+            <div class="form-group">
+              <label><span class="required-asterisk">*</span>Your Name</label>
+              <input type="text" id="step2Name" placeholder="First and last name" />
+            </div>
+
+            <div class="form-group">
+              <label><span class="required-asterisk">*</span>Your Email Address</label>
+              <input type="email" id="step2Email" placeholder="Enter your email" />
+            </div>
+
+            <p class="disclaimer">
+              You will receive emails from the Online Zoo, including updates and news<br />
+              on the latest discoveries and translations. You can unsubscribe at any time.
+            </p>
+
+            <div class="modal-footer">
+              <div class="pagination">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot empty"></div>
+              </div>
+
+              <button type="button" class="step2-back-link">Back</button>
+
+              <div class="next-wrapper">
+                <button type="button" class="step2-next-btn">
+                  NEXT <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>

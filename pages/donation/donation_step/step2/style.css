@@ -1,0 +1,268 @@
+/* ─────────────────────────────────────────── */
+/* Step 2 Donation Form - Billing Information */
+/* ─────────────────────────────────────────── */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.step-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.step-form {
+  width: 100%;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid #dcdcdc;
+}
+
+.form-header {
+  background-color: #F47B20;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+}
+
+.form-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.donation-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-body {
+  padding: 30px 40px;
+  background: #fff;
+  flex: 1;
+}
+
+.billing-header {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #dcdcdc;
+  margin-bottom: 25px;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.required-asterisk {
+  color: #2A9D8F;
+  margin-right: 3px;
+  font-weight: 700;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2A9D8F;
+  box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.1);
+}
+
+/* Disclaimer Text */
+.disclaimer {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* Footer / Navigation */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Left: Pagination Dots */
+.pagination {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2A9D8F;
+}
+
+.dot.empty {
+  background-color: transparent;
+  border: 1px solid #2A9D8F;
+}
+
+/* Center: Back Link */
+.step2-back-link {
+  color: #2A9D8F;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.step2-back-link:hover {
+  color: #21867a;
+}
+
+/* Right: Next Button */
+.next-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.step2-next-btn {
+  background-color: #2A9D8F;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.step2-next-btn:hover {
+  background-color: #21867a;
+}
+
+.arrow-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-body {
+    padding: 20px 20px;
+  }
+
+  .form-header h2 {
+    font-size: 20px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .pagination,
+  .step2-back-link,
+  .next-wrapper {
+    width: 100%;
+    justify-content: center;
+    flex: none;
+  }
+
+  .step2-next-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-body {
+    padding: 20px 16px;
+  }
+
+  .form-header h2 {
+    font-size: 18px;
+  }
+
+  .billing-header {
+    font-size: 14px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .disclaimer {
+    font-size: 12px;
+  }
+
+  .form-footer {
+    padding: 15px 16px;
+  }
+}

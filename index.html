@@ -6,11 +6,89 @@
     <title>Online Zoo - Watch Your Favorite Animal Online</title>
     <link rel="stylesheet" href="./pages/landing/style.css" />
     <link rel="stylesheet" href="./pages/components/header.style.css" />
-    <script src="./pages/landing/script.js" defer></script>
+    <link rel="stylesheet" href="./pages/donation/style.css" />
+    <script type="module" src="./dist/pages/landing.js" defer></script>
+    <script type="module" src="./dist/pages/donationStep1.js" defer></script>
+    <script type="module" src="./dist/pages/donationStep2.js" defer></script>
+    <script type="module" src="./dist/components/header.js" defer></script>
+    <script type="module" src="./dist/pages/donation.js" defer></script>
+    <script type="module" src="./dist/utils/footerDonation.js" defer></script>
   </head>
   <body>
     <!-- Header/Navigation -->
-    <div id="header-placeholder"></div>
+    <header class="header">
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="nav-item-container">
+            <img
+              src="/assets/icons/Logo.png"
+              alt="Online Zoo Logo"
+              class="logo-img"
+            />
+          </div>
+          <div class="nav-item-container">
+            <nav class="nav-menu">
+              <a href="/index.html" class="nav-link">ABOUT</a>
+              <a href="/pages/map/index.html" class="nav-link">MAP</a>
+              <a href="/pages/livezoo/index.html" class="nav-link">ZOOS</a>
+              <a href="/pages/contact_us/index.html" class="nav-link"
+                >CONTACT US</a
+              >
+              <a
+                href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&p=f&t=2K0kCjfsJ31ypZT5-0"
+                class="nav-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DESIGN
+              </a>
+            </nav>
+          </div>
+
+          <div class="nav-item-container social-placeholder" aria-hidden="true">
+            <a href="https://www.youtube.com/" target="_blank">
+              <img
+                src="/assets/icons/YouTube.png"
+                alt="YouTube Icon"
+                class="social-icon"
+              />
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank">
+              <img
+                src="/assets/icons/Instagram.png"
+                alt="Instagram Icon"
+                class="social-icon"
+              />
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+              <img
+                src="/assets/icons/Facebook.png"
+                alt="Facebook Icon"
+                class="social-icon"
+              />
+            </a>
+          </div>
+
+          <div class="nav-item-container user-container">
+            <button class="user-icon-btn" id="user-icon-btn">
+              <img
+                src="/assets/icons/User.png"
+                alt="User Icon"
+                class="user-icon"
+                id="user-avatar"
+              />
+              <span
+                class="user-name"
+                id="user-name"
+                style="display: none"
+              ></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -53,6 +131,14 @@
             />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Pets Slider Section -->
+    <section class="pets-section">
+      <div class="container">
+        <h2>Meet Our Animals</h2>
+        <div id="pets-slider"></div>
       </div>
     </section>
 
@@ -99,8 +185,9 @@
               type="text"
               placeholder="$ DONATION AMOUNT"
               class="donation-input"
+              id="landingDonationInput"
             />
-            <button class="btn btn-donate">→</button>
+            <button class="btn btn-donate" id="landingDonationBtn">→</button>
           </div>
         </div>
       </div>
@@ -124,185 +211,7 @@
         </div>
 
         <!-- Pet Cards Grid -->
-        <div class="pets-grid">
-          <!-- Row 1 -->
-          <!-- Giant Panda -->
-          <div class="pet-card">
-            <div class="pet-image-wrapper">
-              <img
-                src="/assets/images/Animals%20Card.png"
-                alt="Giant Panda Lucas"
-              />
-              <span class="pet-label">Lucas</span>
-            </div>
-            <div class="pet-content">
-              <h3 class="pet-title">Giant Panda</h3>
-              <p class="pet-description">
-                Native to central China, giant pandas have come to symbolize
-                vulnerable species. These gentle giants feed primarily on bamboo
-                and are beloved worldwide.
-              </p>
-              <a href="/pages/livezoo/index.html" class="btn btn-view-cam">
-                VIEW LIVE CAM →
-              </a>
-            </div>
-          </div>
-
-          <!-- Madagascan Lemur -->
-          <div class="pet-card">
-            <div class="pet-image-wrapper">
-              <img
-                src="/assets/images/Animals%20Card%20(1).png"
-                alt="Madagascan Lemur Andy"
-              />
-              <span class="pet-label">Andy</span>
-            </div>
-            <div class="pet-content">
-              <h3 class="pet-title">Madagascan Lemur</h3>
-              <p class="pet-description">
-                These iconic primates with striking black and white tails are
-                found only in Madagascar. Known for their social behavior and
-                unique vocalizations.
-              </p>
-              <a href="/pages/livezoo/index.html" class="btn btn-view-cam">
-                VIEW LIVE CAM →
-              </a>
-            </div>
-          </div>
-
-          <!-- Gorilla in Congo -->
-          <div class="pet-card">
-            <div class="pet-image-wrapper">
-              <img
-                src="/assets/images/Animals%20Card%20(2).png"
-                alt="Gorilla in Congo Glen"
-              />
-              <span class="pet-label">Glen</span>
-            </div>
-            <div class="pet-content">
-              <h3 class="pet-title">Gorilla in Congo</h3>
-              <p class="pet-description">
-                The largest living primate, gorillas are intelligent and
-                peaceful herbivores. These magnificent creatures play a vital
-                role in their forest ecosystems.
-              </p>
-              <a href="/pages/livezoo/index.html" class="btn btn-view-cam">
-                VIEW LIVE CAM →
-              </a>
-            </div>
-          </div>
-
-          <!-- Chinese Crocodile -->
-          <div class="pet-card">
-            <div class="pet-image-wrapper">
-              <img
-                src="/assets/images/animalcardcrocodile.webp"
-                alt="Chinese Crocodile Mike"
-              />
-              <span class="pet-label">Mike</span>
-            </div>
-            <div class="pet-content">
-              <h3 class="pet-title">Chinese Crocodile</h3>
-              <p class="pet-description">
-                One of the rarest crocodile species, the Chinese crocodile is a
-                living fossil from ancient times. These reptiles are critically
-                endangered and heavily protected.
-              </p>
-              <a href="/pages/livezoo/index.html" class="btn btn-view-cam">
-                VIEW LIVE CAM →
-              </a>
-            </div>
-          </div>
-
-          <!-- Row 2 -->
-          <!-- West End Bald Eagles -->
-          <div class="pet-card">
-            <div class="pet-image-wrapper">
-              <img
-                src="/assets/images/Animals%20Card%20(3).png"
-                alt="West End Bald Eagles Sam & Lora"
-              />
-              <span class="pet-label">Sam & Lora</span>
-            </div>
-            <div class="pet-content">
-              <h3 class="pet-title">West End Bald Eagles</h3>
-              <p class="pet-description">
-                Majestic symbols of freedom and power, bald eagles are
-                remarkable hunters with exceptional vision. These birds form
-                lifelong pairs and build massive nests.
-              </p>
-              <a href="/pages/livezoo/index.html" class="btn btn-view-cam">
-                VIEW LIVE CAM →
-              </a>
-            </div>
-          </div>
-
-          <!-- Australian Koala -->
-          <div class="pet-card">
-            <div class="pet-image-wrapper">
-              <img
-                src="/assets/images/Animals%20Card%20(4).png"
-                alt="Australian Koala Liz"
-              />
-              <span class="pet-label">Liz</span>
-            </div>
-            <div class="pet-content">
-              <h3 class="pet-title">Australian Koala</h3>
-              <p class="pet-description">
-                Despite their common name, koalas are marsupials, not bears.
-                These cuddly-looking creatures are specially adapted to digest
-                eucalyptus leaves.
-              </p>
-              <a href="/pages/livezoo/index.html" class="btn btn-view-cam">
-                VIEW LIVE CAM →
-              </a>
-            </div>
-          </div>
-
-          <!-- African Lion -->
-          <div class="pet-card">
-            <div class="pet-image-wrapper">
-              <img
-                src="/assets/images/Animals%20Card%20(5).png"
-                alt="African Lion Shake"
-              />
-              <span class="pet-label">Shake</span>
-            </div>
-            <div class="pet-content">
-              <h3 class="pet-title">African Lion</h3>
-              <p class="pet-description">
-                The king of beasts, lions are the most social of all wild cats.
-                These powerful predators live in prides and hunt cooperatively
-                across African savannas.
-              </p>
-              <a href="/pages/livezoo/index.html" class="btn btn-view-cam">
-                VIEW LIVE CAM →
-              </a>
-            </div>
-          </div>
-
-          <!-- Sumatran Tiger -->
-          <div class="pet-card">
-            <div class="pet-image-wrapper">
-              <img
-                src="/assets/images/animalcardtiger.webp"
-                alt="Sumatran Tiger Senja"
-              />
-              <span class="pet-label">Senja</span>
-            </div>
-            <div class="pet-content">
-              <h3 class="pet-title">Sumatran Tiger</h3>
-              <p class="pet-description">
-                The smallest tiger subspecies, Sumatran tigers are critically
-                endangered. These solitary hunters are perfectly adapted to
-                dense rainforest environments.
-              </p>
-              <a href="/pages/livezoo/index.html" class="btn btn-view-cam">
-                VIEW LIVE CAM →
-              </a>
-            </div>
-          </div>
-        </div>
+        <div id="pets-slider"></div>
 
         <!-- Bottom CTA Button -->
         <div class="cta-section">
@@ -425,7 +334,7 @@
 
         <!-- Donate CTA -->
         <div class="donate-cta">
-          <button class="btn btn-donate-now">DONATE NOW →</button>
+          <button class="btn btn-donate-now" id="ctaDonateBtn">DONATE NOW →</button>
         </div>
       </div>
     </section>
@@ -635,6 +544,13 @@
       />
     </section>
 
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+      <div class="container">
+        <div id="feedback-section"></div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">
@@ -668,6 +584,12 @@
             <img src="../../assets/icons/Instagram.png" alt="Instagram" />
           </a>
         </div>
+        <div class="footer-section">
+          <button class="btn-donate-footer" id="footerDonateBtn">
+            <span>DONATE</span>
+            <span class="arrow">→</span>
+          </button>
+        </div>
       </div>
       <div class="footer-bottom">
         <p>
@@ -675,5 +597,199 @@
         </p>
       </div>
     </footer>
+
+    <!-- Donation Modal -->
+    <div class="modal-overlay" id="donationModal" style="display: none">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal__hero">
+          <img
+            src="/assets/images/image 129.png"
+            alt="Together we care, save and protect wildlife"
+            class="modal__hero-img"
+          />
+          <button class="modal__close" aria-label="Close donation modal">
+            ×
+          </button>
+        </div>
+
+        <div class="modal__body">
+          <h2 class="modal__title" id="modalTitle">
+            Together We Care,<br />Save and Protect!
+          </h2>
+
+          <p class="modal__description">
+            Your most generous gift not only cares for countless animals, but it
+            also offers hope and a vital lifeline to the world's most endangered
+            wildlife relying on us to survive.
+          </p>
+
+          <div class="modal__buttons">
+            <button class="btn-donation" data-amount="20">$20</button>
+            <button class="btn-donation" data-amount="30">$30</button>
+            <button class="btn-donation" data-amount="50">$50</button>
+            <button class="btn-donation" data-amount="80">$80</button>
+            <button class="btn-donation" data-amount="100">$100</button>
+            <button
+              class="btn-donation btn-donation--other"
+              data-amount="custom"
+            >
+              Other Amount
+            </button>
+          </div>
+
+          <div class="custom-amount-section" style="display: none">
+            <input
+              type="number"
+              class="custom-amount-input"
+              placeholder="Enter amount"
+              min="1"
+              max="999999"
+            />
+            <button class="btn-custom-submit">DONATE →</button>
+            <button class="btn-custom-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" style="display: none"></div>
+
+    <!-- Donation Form Step1 Popup -->
+    <div class="overlay" id="donationStep1" style="display: none">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="step1Title"
+      >
+        <div class="modal__header">
+          <h2 id="step1Title">Make Your Donation</h2>
+        </div>
+        <div class="modal__body">
+          <p class="section-label">Donation Information:</p>
+          <hr class="divider" />
+          <p class="field-label"><span>*</span> Choose your donation amount:</p>
+          <div class="amount-grid" id="amountGrid">
+            <button class="btn-amount" data-amount="10">$10</button>
+            <button class="btn-amount" data-amount="20">$20</button>
+            <button class="btn-amount" data-amount="30">$30</button>
+            <button class="btn-amount" data-amount="50">$50</button>
+            <button class="btn-amount" data-amount="80">$80</button>
+            <button class="btn-amount" data-amount="100">$100</button>
+          </div>
+          <div class="form-row">
+            <button id="step1OtherBtn" class="btn-label" type="button">
+              Other Amount
+            </button>
+            <input
+              class="input-text"
+              type="number"
+              id="otherAmount"
+              placeholder=""
+              min="1"
+              aria-label="Enter custom donation amount"
+            />
+          </div>
+          <div class="form-row">
+            <button class="btn-label" type="button">For Special Pet</button>
+            <div class="select-wrapper">
+              <select id="petSelect" aria-label="Choose your favourite pet">
+                <option value="" disabled selected>
+                  Choose your favourite
+                </option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="recurringGift" />
+            <label for="recurringGift"
+              >Make this a monthly recurring gift</label
+            >
+          </div>
+        </div>
+        <div class="modal__footer">
+          <div class="step-dots" aria-label="Step 1 of 3">
+            <div class="dot active" title="Step 1"></div>
+            <div class="dot" title="Step 2"></div>
+            <div class="dot" title="Step 3"></div>
+          </div>
+          <button class="btn-next">Next <span class="arrow">→</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Donation Form Step2 Popup -->
+    <div class="overlay" id="donationStep2" style="display: none">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="step2Title"
+      >
+        <div class="modal-header">
+          <h2 id="step2Title">Make Your Donation</h2>
+        </div>
+        <div class="modal-body">
+          <div class="billing-header">Billing Information:</div>
+          <hr class="divider" />
+
+          <form>
+            <div class="form-group">
+              <label><span class="required-asterisk">*</span>Your Name</label>
+              <input
+                type="text"
+                id="step2Name"
+                placeholder="First and last name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label
+                ><span class="required-asterisk">*</span>Your Email
+                Address</label
+              >
+              <input
+                type="email"
+                id="step2Email"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <p class="disclaimer">
+              You will receive emails from the Online Zoo, including updates and
+              news<br />
+              on the latest discoveries and translations. You can unsubscribe at
+              any time.
+            </p>
+
+            <div class="modal-footer">
+              <div class="pagination">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot empty"></div>
+              </div>
+
+              <button type="button" class="step2-back-link">Back</button>
+
+              <div class="next-wrapper">
+                <button type="button" class="step2-next-btn">
+                  NEXT <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
