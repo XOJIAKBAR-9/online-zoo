@@ -48,6 +48,12 @@ class DonationStep3 {
   private formatCardNumber(e: Event): void {
     const input = e.target as HTMLInputElement;
     let value = input.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+    
+    // Limit to 16 digits
+    if (value.length > 16) {
+      value = value.slice(0, 16);
+    }
+    
     let formattedValue = '';
 
     for (let i = 0; i < value.length; i++) {
@@ -71,15 +77,15 @@ class DonationStep3 {
     const expMonth = this.expMonthSelect?.value || '';
     const expYear = this.expYearSelect?.value || '';
 
-    // Validate card number (should be 13-19 digits)
+    // Validate card number (should be exactly 16 digits)
     if (!cardNumber) {
       alert('Please enter your credit card number');
       this.cardNumberInput?.focus();
       return false;
     }
 
-    if (cardNumber.length < 13 || cardNumber.length > 19) {
-      alert('Please enter a valid card number (13-19 digits)');
+    if (cardNumber.length !== 16) {
+      alert('Please enter a valid card number (16 digits)');
       this.cardNumberInput?.focus();
       return false;
     }
