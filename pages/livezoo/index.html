@@ -12,6 +12,7 @@
   <script type="module" src="../../dist/pages/donationStep2.js" defer></script>
   <script type="module" src="../../dist/components/header.js" defer></script>
   <script type="module" src="../../dist/pages/donation.js" defer></script>
+  <script type="module" src="../../dist/utils/mapModal.js" defer></script>
 </head>
 <body>
   <!-- Header/Navigation -->
@@ -138,7 +139,7 @@
       <p><strong>Habitat:</strong> Forests</p>
       <p>
         <strong>Range:</strong> Eastern Asia
-        <span class="view-map">VIEW MAP →</span>
+        <span class="view-map" id="view-map-panda">VIEW MAP →</span>
       </p>
     </div>
 
@@ -228,16 +229,8 @@
       <p><strong>Habitat:</strong> Forests and wetlands</p>
       <p>
         <strong>Range:</strong> Eastern Asia
-        <span class="view-map">VIEW MAP →</span>
-      </p>
-    </div>
-
-  </div>
-
-    <!-- DESCRIPTION BELOW -->
-  <div class="animal-description">
-    <p>
-      The bald eagle, with its snowy-feathered (not bald) head and white tail, is the proud national bird symbol of the United States—yet the bird was nearly wiped out there. For many decades, bald eagles were hunted for sport and for the "protection" of fishing grounds.  These powerful birds of prey use their talons to fish, but they get many of their meals by scavenging carrion or stealing the kills of other animals. They live near water and favor coasts and lakes where fish are plentiful, though they will also snare and eat small mammals. Bald eagles are believed to mate for life. A pair constructs an enormous stick nest—one of the bird-world's biggest—high above the ground and tends to a pair of eggs each year. Immature eagles are dark, and until they are about five years old, they lack the distinctive white markings that make their parents so easy to identify.
+        <span class="view-map" id="view-map-eagle">VIEW MAP →</span>
+      </p>—yet the bird was nearly wiped out there. For many decades, bald eagles were hunted for sport and for the "protection" of fishing grounds.  These powerful birds of prey use their talons to fish, but they get many of their meals by scavenging carrion or stealing the kills of other animals. They live near water and favor coasts and lakes where fish are plentiful, though they will also snare and eat small mammals. Bald eagles are believed to mate for life. A pair constructs an enormous stick nest—one of the bird-world's biggest—high above the ground and tends to a pair of eggs each year. Immature eagles are dark, and until they are about five years old, they lack the distinctive white markings that make their parents so easy to identify.
     </p>
   </div>
 
@@ -313,7 +306,7 @@
       <p><strong>Habitat:</strong> Rainforests</p>
       <p>
         <strong>Range:</strong> Central Africa
-        <span class="view-map">VIEW MAP →</span>
+        <span class="view-map" id="view-map-gorilla">VIEW MAP →</span>
       </p>
     </div>
 
@@ -397,7 +390,7 @@
       <p><strong>Habitat:</strong> Forests</p>
       <p>
         <strong>Range:</strong> Southest Asia
-        <span class="view-map">VIEW MAP →</span>
+        <span class="view-map" id="view-map-lemur">VIEW MAP →</span>
       </p>
     </div>
 
