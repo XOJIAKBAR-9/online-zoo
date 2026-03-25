@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation | Online Zoo</title>
+    <link rel="stylesheet" href="../components/theme-variables.css">
     <link rel="stylesheet" href="../components/header.style.css">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="../../dist/components/theme.js" defer></script>
+    <script type="module" src="../../dist/components/i18n.js" defer></script>
     <script src="../../dist/components/header.js" defer></script>
     <script src="../../dist/pages/donation.js" defer></script>
 </head>
@@ -29,11 +32,11 @@
 
             <!-- Text + buttons -->
             <div class="modal__body">
-                <h2 class="modal__title" id="modalTitle">
+                <h2 class="modal__title" id="modalTitle" data-i18n="modal.title">
                     Together We Care,<br>Save and Protect!
                 </h2>
 
-                <p class="modal__description">
+                <p class="modal__description" data-i18n="modal.desc">
                     Your most generous gift not only cares for countless animals,
                     but it also offers hope and a vital lifeline to the world's most
                     endangered wildlife relying on us to survive.
@@ -45,7 +48,7 @@
                     <button class="btn-donation" data-amount="50">$50</button>
                     <button class="btn-donation" data-amount="80">$80</button>
                     <button class="btn-donation" data-amount="100">$100</button>
-                    <button class="btn-donation btn-donation--other" id="customAmountBtn" data-amount="custom">Other Amount</button>
+                    <button class="btn-donation btn-donation--other" id="customAmountBtn" data-amount="custom" data-i18n="modal.other">Other Amount</button>
                 </div>
 
                 <!-- Custom amount input (hidden by default) -->
@@ -53,12 +56,12 @@
                     <input
                         type="number"
                         class="custom-amount-input"
-                        placeholder="Enter amount"
+                        placeholder="Enter amount" data-i18n-ph="ph.enterAmount"
                         min="1"
                         max="999999"
                     />
-                    <button class="btn-custom-submit">DONATE →</button>
-                    <button class="btn-custom-cancel">Cancel</button>
+                    <button class="btn-custom-submit" data-i18n="modal.customSubmit">DONATE →</button>
+                    <button class="btn-custom-cancel" data-i18n="modal.customCancel">Cancel</button>
                 </div>
             </div>
 

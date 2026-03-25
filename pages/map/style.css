@@ -8,8 +8,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f3f3f3;
-    color: #2c1b47;
+    background: var(--bg-tertiary, #f3f3f3);
+    color: var(--text-color, #2c1b47);
 }
 
 .container {
@@ -69,7 +69,7 @@ body {
 /* ================= FOOTER ================= */
 
 .footer {
-    background: #2c1b47;
+    background: var(--footer-bg, #2c1b47);
     color: white;
     padding: 60px 0;
     margin-top: 80px;

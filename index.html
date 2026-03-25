@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Zoo - Watch Your Favorite Animal Online</title>
+    <link rel="stylesheet" href="./pages/components/theme-variables.css" />
     <link rel="stylesheet" href="./pages/landing/style.css" />
     <link rel="stylesheet" href="./pages/components/header.style.css" />
     <link rel="stylesheet" href="./pages/donation/style.css" />
@@ -11,6 +12,8 @@
     <script type="module" src="./dist/pages/donationStep1.js" defer></script>
     <script type="module" src="./dist/pages/donationStep2.js" defer></script>
     <script type="module" src="./dist/components/header.js" defer></script>
+    <script type="module" src="./dist/components/theme.js" defer></script>
+    <script type="module" src="./dist/components/i18n.js" defer></script>
     <script type="module" src="./dist/pages/donation.js" defer></script>
     <script type="module" src="./dist/utils/footerDonation.js" defer></script>
     <script type="module" src="./dist/utils/volunteerDonation.js" defer></script>
@@ -30,10 +33,10 @@
           </div>
           <div class="nav-item-container">
             <nav class="nav-menu">
-              <a href="/index.html" class="nav-link">ABOUT</a>
-              <a href="/pages/map/index.html" class="nav-link">MAP</a>
-              <a href="/pages/livezoo/index.html" class="nav-link">ZOOS</a>
-              <a href="/pages/contact_us/index.html" class="nav-link"
+              <a href="/index.html" class="nav-link" data-i18n="nav.about">ABOUT</a>
+              <a href="/pages/map/index.html" class="nav-link" data-i18n="nav.map">MAP</a>
+              <a href="/pages/livezoo/index.html" class="nav-link" data-i18n="nav.zoos">ZOOS</a>
+              <a href="/pages/contact_us/index.html" class="nav-link" data-i18n="nav.contact"
                 >CONTACT US</a
               >
               <a
@@ -41,9 +44,16 @@
                 class="nav-link"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-i18n="nav.design"
               >
                 DESIGN
               </a>
+              <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
+                <span class="theme-icon" id="theme-icon">🌙</span>
+              </button>
+              <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Toggle language">
+                <span class="lang-label" id="lang-label">RU</span>
+              </button>
             </nav>
           </div>
 
@@ -95,15 +105,15 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1>
+        <h1 data-i18n="hero.title">
           WATCH YOUR<br />FAVORITE <span class="highlight">ANIMAL</span
           ><br />ONLINE
         </h1>
-        <p>
+        <p data-i18n="hero.subtitle">
           Explore the exciting and mysterious world of wild animals in a natural
           setting without leaving your home.
         </p>
-        <a href="/pages/livezoo/index.html" class="btn btn-primary">
+        <a href="/pages/livezoo/index.html" class="btn btn-primary" data-i18n="hero.cta">
           VIEW LIVE CAM →
         </a>
       </div>
@@ -114,8 +124,8 @@
       <div class="container">
         <div class="welcome-content">
           <div class="welcome-text">
-            <h2>WELCOME TO THE<br />ONLINE ZOO!</h2>
-            <p>
+            <h2 data-i18n="welcome.title">WELCOME TO THE<br />ONLINE ZOO!</h2>
+            <p data-i18n="welcome.text">
               On our website, using live webcams, fans of all ages can observe
               various animals. Among them are Giant pandas, eagles, alligators,
               forest gorillas, African lions, and others. It is the whole
@@ -156,8 +166,8 @@
             />
           </div>
           <div class="how-we-work-text">
-            <h2>HOW WE WORK</h2>
-            <p>
+            <h2 data-i18n="howwework.title">HOW WE WORK</h2>
+            <p data-i18n="howwework.text">
               Online Zoo is a nonprofit committed to inspiring awareness and
               preservation of nature and wild animals in our zoo and world. We
               want the world to understand the integral role every species plays
@@ -176,8 +186,8 @@
       <div class="container">
         <div class="donation-content">
           <div class="donation-text">
-            <h2>YOUR DONATION MAKES A DIFFERENCE!</h2>
-            <p>
+            <h2 data-i18n="donation.title">YOUR DONATION MAKES A DIFFERENCE!</h2>
+            <p data-i18n="donation.text">
               The Online Zoo's animal webcams are some of the most famous on the
               internet. Tune in to watch your favourite animals — live, 24/7
             </p>
@@ -188,6 +198,7 @@
               placeholder="$ DONATION AMOUNT"
               class="donation-input"
               id="landingDonationInput"
+              data-i18n-ph="ph.donationAmount"
             />
             <button class="btn btn-donate" id="landingDonationBtn">→</button>
           </div>
@@ -198,8 +209,8 @@
     <section class="pets-section">
       <div class="container">
         <div class="section-header">
-          <h1>MEET SOME OUR PETS</h1>
-          <p>
+          <h1 data-i18n="pets.title">MEET SOME OUR PETS</h1>
+          <p data-i18n="pets.subtitle">
             Get up close with our incredible animals and discover what makes
             each species unique. Learn about their habitats, behaviors, and the
             conservation efforts keeping them safe.
@@ -217,7 +228,7 @@
 
         <!-- Bottom CTA Button -->
         <div class="cta-section">
-          <button class="btn btn-favorite">CHOOSE YOUR FAVORITE →</button>
+          <button class="btn btn-favorite" data-i18n="pets.cta">CHOOSE YOUR FAVORITE →</button>
         </div>
       </div>
     </section>
@@ -226,7 +237,7 @@
       <div class="container">
         <!-- Section Header -->
         <div class="section-header">
-          <h1 class="section-title">PAY AND FEED</h1>
+          <h1 class="section-title" data-i18n="payfeed.title">PAY AND FEED</h1>
         </div>
 
         <!-- Steps Container -->
@@ -250,8 +261,8 @@
                 </div>
 
                 <div class="step-text">
-                  <h3 class="step-title">Your donation has an impact</h3>
-                  <p class="step-description">
+                  <h3 class="step-title" data-i18n="payfeed.step1.title">Your donation has an impact</h3>
+                  <p class="step-description" data-i18n="payfeed.step1.text">
                     Providing our animals with high-quality nutrition diets is
                     one element of our mission. Proper care promotes the health
                     of our animals and ensures they develop to their full
@@ -284,8 +295,8 @@
                 </div>
 
                 <div class="step-text">
-                  <h3 class="step-title">Make a donation</h3>
-                  <p class="step-description">
+                  <h3 class="step-title" data-i18n="payfeed.step2.title">Make a donation</h3>
+                  <p class="step-description" data-i18n="payfeed.step2.text">
                     You can donate through your credit card without any fees. It
                     is easy and safe. We do not keep donor's personal
                     information on an online network. Choose our support to give
@@ -319,10 +330,10 @@
                 </div>
 
                 <div class="step-text">
-                  <h3 class="step-title">
+                  <h3 class="step-title" data-i18n="payfeed.step3.title">
                     Bring your food charity — straight to your favourite pets.
                   </h3>
-                  <p class="step-description">
+                  <p class="step-description" data-i18n="payfeed.step3.text">
                     After your donation, the animal receives its favorite foods.
                     You can support your favorite animals or any animal you care
                     about and make a real social impact. Never doubt that you
@@ -336,7 +347,7 @@
 
         <!-- Donate CTA -->
         <div class="donate-cta">
-          <button class="btn btn-donate-now" id="ctaDonateBtn">DONATE NOW →</button>
+          <button class="btn btn-donate-now" id="ctaDonateBtn" data-i18n="payfeed.cta">DONATE NOW →</button>
         </div>
       </div>
     </section>
@@ -348,8 +359,8 @@
       <div class="container testimonials-container">
         <!-- Section Header -->
         <div class="testimonials-header">
-          <h1 class="testimonials-title">WHAT OUR USERS THINK</h1>
-          <p class="testimonials-intro">
+          <h1 class="testimonials-title" data-i18n="testimonials.title">WHAT OUR USERS THINK</h1>
+          <p class="testimonials-intro" data-i18n="testimonials.intro">
             We are continuously striving to improve the experiences of our
             future guests. Below you can leave your own feedback, or simply view
             feedback from past clients.
@@ -485,7 +496,7 @@
 
         <!-- Leave Feedback Button -->
         <div class="feedback-section">
-          <button class="btn btn-feedback">LEAVE FEEDBACK →</button>
+          <button class="btn btn-feedback" data-i18n="testimonials.feedback">LEAVE FEEDBACK →</button>
         </div>
       </div>
     </section>
@@ -493,8 +504,8 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1 class="hero-title">Care for the<br />animals you love</h1>
-        <p class="hero-description">
+        <h1 class="hero-title" data-i18n="hero2.title">Care for the<br />animals you love</h1>
+        <p class="hero-description" data-i18n="hero2.text">
           You can help to look after the animals you love with your gift today
         </p>
       </div>
@@ -519,10 +530,10 @@
                 <img src="/assets/images/Donate%20card.png" alt="Panda" />
               </div>
               <div class="card-info">
-                <button class="btn-feed">
+                <button class="btn-feed" data-i18n="feed.btn">
                   FEED <span class="arrow">→</span>
                 </button>
-                <p class="card-text">
+                <p class="card-text" data-i18n="feed.panda">
                   Your $30 could give Lucas a slice of panda cake, made with our
                   secret recipe.
                 </p>
@@ -538,10 +549,10 @@
                 <img src="/assets/images/Donate%20card%20(1).png" alt="Tiger" />
               </div>
               <div class="card-info">
-                <button class="btn-feed">
+                <button class="btn-feed" data-i18n="feed.btn">
                   FEED <span class="arrow">→</span>
                 </button>
-                <p class="card-text">
+                <p class="card-text" data-i18n="feed.tiger">
                   Your $150 will help to care for Senja, a Sumatran tiger, for
                   three weeks.
                 </p>
@@ -554,10 +565,10 @@
                 <img src="/assets/images/Donate%20card%20(3).png" alt="Lemur" />
               </div>
               <div class="card-info">
-                <button class="btn-feed">
+                <button class="btn-feed" data-i18n="feed.btn">
                   FEED <span class="arrow">→</span>
                 </button>
-                <p class="card-text">
+                <p class="card-text" data-i18n="feed.lemur">
                   With your support, we can give Andy his favorite fruits.
                   Especially when it's not fruit season in its natural habitat.
                 </p>
@@ -573,10 +584,10 @@
                 />
               </div>
               <div class="card-info">
-                <button class="btn-feed">
+                <button class="btn-feed" data-i18n="feed.btn">
                   FEED <span class="arrow">→</span>
                 </button>
-                <p class="card-text">
+                <p class="card-text" data-i18n="feed.eagles">
                   Sam & Lora have hatched and raised numerous young and will be
                   happy with your help.
                 </p>
@@ -588,7 +599,7 @@
 
       <!-- Choose Your Favorite Button -->
       <div class="button-container">
-        <button class="btn-choose-favorite">
+        <button class="btn-choose-favorite" data-i18n="feed.choosefav">
           CHOOSE YOUR FAVORITE <span class="arrow">→</span>
         </button>
       </div>
@@ -619,15 +630,15 @@
         </div>
         <div class="footer-section">
           <nav class="footer-nav">
-            <a href="#" class="footer-link">ABOUT</a>
-            <a href="#" class="footer-link">MAP</a>
-            <a href="#" class="footer-link">ZOOS</a>
-            <a href="#" class="footer-link">CONTACT US</a>
+            <a href="#" class="footer-link" data-i18n="footer.about">ABOUT</a>
+            <a href="#" class="footer-link" data-i18n="footer.map">MAP</a>
+            <a href="#" class="footer-link" data-i18n="footer.zoos">ZOOS</a>
+            <a href="#" class="footer-link" data-i18n="footer.contact">CONTACT US</a>
           </nav>
         </div>
         <div class="footer-section">
           <button class="btn-donate-volunteers" id="volunteerDonateBtn">
-            <span>DONATE FOR VOLUNTEERS</span>
+            <span data-i18n="footer.donate">DONATE FOR VOLUNTEERS</span>
             <span class="arrow">→</span>
           </button>
         </div>
@@ -644,7 +655,7 @@
         </div>
         <div class="footer-section">
           <button class="btn-donate-footer" id="footerDonateBtn">
-            <span>DONATE</span>
+            <span data-i18n="footer.donateBtn">DONATE</span>
             <span class="arrow">→</span>
           </button>
         </div>
@@ -676,11 +687,11 @@
         </div>
 
         <div class="modal__body">
-          <h2 class="modal__title" id="modalTitle">
+          <h2 class="modal__title" id="modalTitle" data-i18n="modal.title">
             Together We Care,<br />Save and Protect!
           </h2>
 
-          <p class="modal__description">
+          <p class="modal__description" data-i18n="modal.desc">
             Your most generous gift not only cares for countless animals, but it
             also offers hope and a vital lifeline to the world's most endangered
             wildlife relying on us to survive.
@@ -695,6 +706,7 @@
             <button
               class="btn-donation btn-donation--other"
               data-amount="custom"
+              data-i18n="modal.other"
             >
               Other Amount
             </button>
@@ -705,11 +717,12 @@
               type="number"
               class="custom-amount-input"
               placeholder="Enter amount"
+              data-i18n-ph="ph.enterAmount"
               min="1"
               max="999999"
             />
-            <button class="btn-custom-submit">DONATE →</button>
-            <button class="btn-custom-cancel">Cancel</button>
+            <button class="btn-custom-submit" data-i18n="modal.customSubmit">DONATE →</button>
+            <button class="btn-custom-cancel" data-i18n="modal.customCancel">Cancel</button>
           </div>
         </div>
       </div>
@@ -726,12 +739,12 @@
         aria-labelledby="step1Title"
       >
         <div class="modal__header">
-          <h2 id="step1Title">Make Your Donation</h2>
+          <h2 id="step1Title" data-i18n="step1.title">Make Your Donation</h2>
         </div>
         <div class="modal__body">
-          <p class="section-label">Donation Information:</p>
+          <p class="section-label" data-i18n="step1.info">Donation Information:</p>
           <hr class="divider" />
-          <p class="field-label"><span>*</span> Choose your donation amount:</p>
+          <p class="field-label" data-i18n="step1.choose"><span>*</span> Choose your donation amount:</p>
           <div class="amount-grid" id="amountGrid">
             <button class="btn-amount" data-amount="10">$10</button>
             <button class="btn-amount" data-amount="20">$20</button>
@@ -741,7 +754,7 @@
             <button class="btn-amount" data-amount="100">$100</button>
           </div>
           <div class="form-row">
-            <button id="step1OtherBtn" class="btn-label" type="button">
+            <button id="step1OtherBtn" class="btn-label" type="button" data-i18n="step1.other">
               Other Amount
             </button>
             <input
@@ -754,10 +767,10 @@
             />
           </div>
           <div class="form-row">
-            <button class="btn-label" type="button">For Special Pet</button>
+            <button class="btn-label" type="button" data-i18n="step1.pet">For Special Pet</button>
             <div class="select-wrapper">
               <select id="petSelect" aria-label="Choose your favourite pet">
-                <option value="" disabled selected>
+                <option value="" disabled selected data-i18n="step1.selectPet">
                   Choose your favourite
                 </option>
                 <option value="dog">Dog</option>
@@ -770,7 +783,7 @@
           </div>
           <div class="checkbox-row">
             <input type="checkbox" id="recurringGift" />
-            <label for="recurringGift"
+            <label for="recurringGift" data-i18n="step1.recurring"
               >Make this a monthly recurring gift</label
             >
           </div>
@@ -781,7 +794,7 @@
             <div class="dot" title="Step 2"></div>
             <div class="dot" title="Step 3"></div>
           </div>
-          <button class="btn-next">Next <span class="arrow">→</span></button>
+          <button class="btn-next"><span data-i18n="step1.next">Next</span> <span class="arrow">→</span></button>
         </div>
       </div>
     </div>
@@ -795,35 +808,37 @@
         aria-labelledby="step2Title"
       >
         <div class="modal-header">
-          <h2 id="step2Title">Make Your Donation</h2>
+          <h2 id="step2Title" data-i18n="step2.title">Make Your Donation</h2>
         </div>
         <div class="modal-body">
-          <div class="billing-header">Billing Information:</div>
+          <div class="billing-header" data-i18n="step2.billing">Billing Information:</div>
           <hr class="divider" />
 
           <form>
             <div class="form-group">
-              <label><span class="required-asterisk">*</span>Your Name</label>
+              <label><span class="required-asterisk">*</span> <span data-i18n="step2.name">Your Name</span></label>
               <input
                 type="text"
                 id="step2Name"
                 placeholder="First and last name"
+                data-i18n-ph="ph.firstName"
               />
             </div>
 
             <div class="form-group">
               <label
-                ><span class="required-asterisk">*</span>Your Email
-                Address</label
+                ><span class="required-asterisk">*</span> <span data-i18n="step2.email">Your Email
+                Address</span></label
               >
               <input
                 type="email"
                 id="step2Email"
                 placeholder="Enter your email"
+                data-i18n-ph="ph.enterEmail"
               />
             </div>
 
-            <p class="disclaimer">
+            <p class="disclaimer" data-i18n="step2.disclaimer">
               You will receive emails from the Online Zoo, including updates and
               news<br />
               on the latest discoveries and translations. You can unsubscribe at
@@ -837,11 +852,11 @@
                 <div class="dot empty"></div>
               </div>
 
-              <button type="button" class="step2-back-link">Back</button>
+              <button type="button" class="step2-back-link" data-i18n="step2.back">Back</button>
 
               <div class="next-wrapper">
                 <button type="button" class="step2-next-btn">
-                  NEXT <span class="arrow-icon">→</span>
+                  <span data-i18n="step2.next">NEXT</span> <span class="arrow-icon">→</span>
                 </button>
               </div>
             </div>

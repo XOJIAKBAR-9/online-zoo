@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map | Online Zoo</title>
+    <link rel="stylesheet" href="../components/theme-variables.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../components/header.style.css" />
     <link rel="stylesheet" href="../donation/style.css" />
+    <script type="module" src="../../dist/components/theme.js" defer></script>
+    <script type="module" src="../../dist/components/i18n.js" defer></script>
     <script type="module" src="../../dist/pages/map.js" defer></script>
     <script type="module" src="../../dist/pages/donationStep1.js" defer></script>
     <script type="module" src="../../dist/pages/donationStep2.js" defer></script>
@@ -20,7 +23,7 @@
     <!-- ================= MAP SECTION ================= -->
     <main class="map-section">
       <div class="container">
-        <h1 class="map-section__title">
+        <h1 class="map-section__title" data-i18n="map.title">
           FIND WHERE ARE <br />
           THE ANIMALS LIVE
         </h1>
@@ -87,13 +90,13 @@
           </div>
 
           <ul class="footer__nav">
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">MAP</a></li>
-            <li><a href="#">ZOOS</a></li>
-            <li><a href="#">CONTACT US</a></li>
+            <li><a href="#" data-i18n="footer.about">ABOUT</a></li>
+            <li><a href="#" data-i18n="footer.map">MAP</a></li>
+            <li><a href="#" data-i18n="footer.zoos">ZOOS</a></li>
+            <li><a href="#" data-i18n="footer.contact">CONTACT US</a></li>
           </ul>
 
-          <button class="footer__btn">DONATE FOR VOLUNTEERS →</button>
+          <button class="footer__btn" data-i18n="footer.donate">DONATE FOR VOLUNTEERS →</button>
         </div>
 
         <div class="footer__bottom">
@@ -120,11 +123,11 @@
             </div>
 
             <div class="modal__body">
-                <h2 class="modal__title" id="modalTitle">
+                <h2 class="modal__title" id="modalTitle" data-i18n="modal.title">
                     Together We Care,<br>Save and Protect!
                 </h2>
 
-                <p class="modal__description">
+                <p class="modal__description" data-i18n="modal.desc">
                     Your most generous gift not only cares for countless animals,
                     but it also offers hope and a vital lifeline to the world's most
                     endangered wildlife relying on us to survive.
@@ -136,19 +139,19 @@
                     <button class="btn-donation" data-amount="50">$50</button>
                     <button class="btn-donation" data-amount="80">$80</button>
                     <button class="btn-donation" data-amount="100">$100</button>
-                    <button class="btn-donation btn-donation--other" data-amount="custom">Other Amount</button>
+                    <button class="btn-donation btn-donation--other" data-amount="custom" data-i18n="modal.other">Other Amount</button>
                 </div>
 
                 <div class="custom-amount-section" style="display: none;">
                     <input
                         type="number"
                         class="custom-amount-input"
-                        placeholder="Enter amount"
+                        placeholder="Enter amount" data-i18n-ph="ph.enterAmount"
                         min="1"
                         max="999999"
                     />
-                    <button class="btn-custom-submit">DONATE →</button>
-                    <button class="btn-custom-cancel">Cancel</button>
+                    <button class="btn-custom-submit" data-i18n="modal.customSubmit">DONATE →</button>
+                    <button class="btn-custom-cancel" data-i18n="modal.customCancel">Cancel</button>
                 </div>
             </div>
         </div>
@@ -160,12 +163,12 @@
     <div class="overlay" id="donationStep1" style="display: none;">
       <div class="modal" role="dialog" aria-modal="true" aria-labelledby="step1Title">
         <div class="modal__header">
-          <h2 id="step1Title">Make Your Donation</h2>
+          <h2 id="step1Title" data-i18n="step1.title">Make Your Donation</h2>
         </div>
         <div class="modal__body">
-          <p class="section-label">Donation Information:</p>
+          <p class="section-label" data-i18n="step1.info">Donation Information:</p>
           <hr class="divider" />
-          <p class="field-label"><span>*</span> Choose your donation amount:</p>
+          <p class="field-label" data-i18n="step1.choose"><span>*</span> Choose your donation amount:</p>
           <div class="amount-grid" id="amountGrid">
             <button class="btn-amount" data-amount="10">$10</button>
             <button class="btn-amount" data-amount="20">$20</button>
@@ -175,7 +178,7 @@
             <button class="btn-amount" data-amount="100">$100</button>
           </div>
           <div class="form-row">
-            <button id="step1OtherBtn" class="btn-label" type="button">Other Amount</button>
+            <button id="step1OtherBtn" class="btn-label" type="button" data-i18n="step1.other">Other Amount</button>
             <input
               class="input-text"
               type="number"
@@ -186,10 +189,10 @@
             />
           </div>
           <div class="form-row">
-            <button class="btn-label" type="button">For Special Pet</button>
+            <button class="btn-label" type="button" data-i18n="step1.pet">For Special Pet</button>
             <div class="select-wrapper">
               <select id="petSelect" aria-label="Choose your favourite pet">
-                <option value="" disabled selected>Choose your favourite</option>
+                <option value="" disabled selected data-i18n="step1.selectPet">Choose your favourite</option>
                 <option value="dog">Dog</option>
                 <option value="cat">Cat</option>
                 <option value="bird">Bird</option>
@@ -200,7 +203,7 @@
           </div>
           <div class="checkbox-row">
             <input type="checkbox" id="recurringGift" />
-            <label for="recurringGift">Make this a monthly recurring gift</label>
+            <label for="recurringGift" data-i18n="step1.recurring">Make this a monthly recurring gift</label>
           </div>
         </div>
         <div class="modal__footer">
@@ -210,7 +213,7 @@
             <div class="dot" title="Step 3"></div>
           </div>
           <button class="btn-next">
-            Next <span class="arrow">→</span>
+            <span data-i18n="step1.next">Next</span> <span class="arrow">→</span>
           </button>
         </div>
       </div>
@@ -220,24 +223,24 @@
     <div class="overlay" id="donationStep2" style="display: none;">
       <div class="modal" role="dialog" aria-modal="true" aria-labelledby="step2Title">
         <div class="modal-header">
-          <h2 id="step2Title">Make Your Donation</h2>
+          <h2 id="step2Title" data-i18n="step2.title">Make Your Donation</h2>
         </div>
         <div class="modal-body">
-          <div class="billing-header">Billing Information:</div>
+          <div class="billing-header" data-i18n="step2.billing">Billing Information:</div>
           <hr class="divider" />
 
           <form>
             <div class="form-group">
-              <label><span class="required-asterisk">*</span>Your Name</label>
-              <input type="text" id="step2Name" placeholder="First and last name" />
+              <label><span class="required-asterisk">*</span> <span data-i18n="step2.name">Your Name</span></label>
+              <input type="text" id="step2Name" placeholder="First and last name" data-i18n-ph="ph.firstName" />
             </div>
 
             <div class="form-group">
-              <label><span class="required-asterisk">*</span>Your Email Address</label>
-              <input type="email" id="step2Email" placeholder="Enter your email" />
+              <label><span class="required-asterisk">*</span> <span data-i18n="step2.email">Your Email Address</span></label>
+              <input type="email" id="step2Email" placeholder="Enter your email" data-i18n-ph="ph.enterEmail" />
             </div>
 
-            <p class="disclaimer">
+            <p class="disclaimer" data-i18n="step2.disclaimer">
               You will receive emails from the Online Zoo, including updates and news<br />
               on the latest discoveries and translations. You can unsubscribe at any time.
             </p>
@@ -249,12 +252,12 @@
                 <div class="dot empty"></div>
               </div>
 
-              <button type="button" class="step2-back-link">Back</button>
+              <button type="button" class="step2-back-link" data-i18n="step2.back">Back</button>
 
               <div class="next-wrapper">
                 <button type="button" class="step2-next-btn">
-                  NEXT <span class="arrow-icon">→</span>
-                </button>
+              <span data-i18n="step2.next">NEXT</span> <span class="arrow-icon">→</span>
+            </button>
               </div>
             </div>
           </form>

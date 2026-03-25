@@ -5,12 +5,65 @@
 }
 
 :root {
+  /* Brand colours (unchanged between themes) */
   --primary-color: #ff9900;
   --secondary-color: #009999;
-  --dark-color: #1a1a2e;
+
+  /* Theme-sensitive tokens – LIGHT values */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
   --light-color: #f5f5f5;
+  --dark-color: #1a1a2e;
   --text-color: #333;
+  --text-muted: #555;
+  --text-hint: #666;
   --card-bg: #2c1e50;
+  --header-bg: #F58021;
+  --nav-link-color: #000;
+  --testimonial-card-bg: #ffffff;
+  --border-color: #f0f0f0;
+  --modal-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #666;
+  --footer-bg: #1a1a2e;
+}
+
+/* ── Dark theme overrides ──────────────────────────── */
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --light-color: #16213e;
+  --dark-color: #e0e0e0;
+  --text-color: #e0e0e0;
+  --text-muted: #aaaaaa;
+  --text-hint: #999999;
+  --card-bg: #0f3460;
+  --header-bg: #2c1e50;
+  --nav-link-color: #e0e0e0;
+  --testimonial-card-bg: #1a1a3e;
+  --border-color: #2a2a4a;
+  --modal-bg: #16213e;
+  --input-bg: #1a1a2e;
+  --input-border: #444;
+  --footer-bg: #0a0a1a;
+}
+
+/* Smooth transition when toggling themes */
+body,
+.header,
+.welcome,
+.how-we-work,
+.pets-section,
+.footer,
+.testimonial-card,
+.feed-card,
+.modal,
+.donation,
+.animals-section,
+.large-image-section,
+.feedback-section,
+.pay-feed-section {
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 html {
@@ -20,6 +73,7 @@ html {
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
+  background-color: var(--bg-primary);
   line-height: 1.6;
 }
 /* Hero Section */
@@ -61,7 +115,7 @@ body {
 
 .hero-content p {
   font-size: 16px;
-  color: #666;
+  color: var(--text-hint);
   margin-bottom: 40px;
   line-height: 1.8;
   max-width: 500px;
@@ -118,7 +172,7 @@ body {
 
 /* Welcome Section */
 .welcome {
-  background-color: white;
+  background-color: var(--bg-primary);
   padding: 80px 0;
 }
 
@@ -143,7 +197,7 @@ body {
 .welcome-text p {
   font-size: 15px;
   line-height: 1.8;
-  color: #555;
+  color: var(--text-muted);
 }
 
 .welcome-image {
@@ -170,7 +224,7 @@ body {
 
 /* How We Work Section */
 .how-we-work {
-  background-color: #f9f9f9;
+  background-color: var(--bg-secondary);
   padding: 80px 0;
 }
 
@@ -215,7 +269,7 @@ body {
 .how-we-work-text p {
   font-size: 15px;
   line-height: 1.8;
-  color: #555;
+  color: var(--text-muted);
 }
 
 /* Donation Section */
@@ -298,7 +352,7 @@ body {
 /* Pets Section */
 .pets-section {
   padding: 80px 0;
-  background-color: white;
+  background-color: var(--bg-primary);
 }
 
 .section-header {
@@ -316,7 +370,7 @@ body {
 
 .section-header p {
   font-size: 16px;
-  color: #666;
+  color: var(--text-hint);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.8;
@@ -699,7 +753,7 @@ body {
 
 /* Testimonial Card */
 .testimonial-card {
-  background-color: #ffffff;
+  background-color: var(--testimonial-card-bg);
   padding: 25px;
   border-radius: 6px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
@@ -734,13 +788,13 @@ body {
 
 /* Testimonial Meta (date and author) */
 .testimonial-meta {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-color);
   padding-top: 15px;
 }
 
 .testimonial-date {
   font-size: 11px;
-  color: #666;
+  color: var(--text-hint);
   margin-bottom: 5px;
   font-weight: 600;
   letter-spacing: 0.3px;
@@ -1062,9 +1116,9 @@ body {
 }
 
 .footer {
-  background-color: var(--dark-color);
+  background-color: var(--footer-bg);
   padding: 40px 20px 20px;
-  color: var(--white);
+  color: #ffffff;
 }
 
 .footer-content {

@@ -24,7 +24,7 @@
 
 /* Modal Card */
 .modal {
-  background: #fff;
+  background: var(--modal-bg, #fff);
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
@@ -33,6 +33,7 @@
   position: relative;
   z-index: 1001;
   animation: slideUp 0.3s ease-out;
+  transition: background-color 0.35s ease;
 }
 
 @keyframes slideUp {
@@ -110,7 +111,7 @@
   font-family: 'Open Sans', 'Segoe UI', sans-serif;
   font-size: 16px;
   line-height: 1.7;
-  color: #555;
+  color: var(--text-muted, #555);
   max-width: 620px;
   margin: 0 auto 40px;
 }
@@ -330,13 +331,13 @@
 }
 
 #donationStep2 .modal {
-  background: #ffffff;
+  background: var(--modal-bg, #ffffff);
   width: 100%;
   max-width: 600px;
   border-radius: 4px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border: 1px solid #dcdcdc;
+  border: 1px solid var(--border-color, #dcdcdc);
 }
 
 /* Header Banner */
@@ -565,7 +566,7 @@
 
 #donationStep1 .modal__body {
   padding: 36px 48px 40px;
-  background: #fafafa;
+  background: var(--bg-secondary, #fafafa);
 }
 
 /* Section label + divider */

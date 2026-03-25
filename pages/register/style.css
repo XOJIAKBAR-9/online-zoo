@@ -9,7 +9,7 @@
 }
 
 .register-form-container {
-    background: white;
+    background: var(--form-card-bg, white);
     border-radius: 15px;
     padding: 40px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -20,13 +20,13 @@
 
 .register-form-container h1 {
     font-size: 32px;
-    color: #1a1a2e;
+    color: var(--form-label-color, #1a1a2e);
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .register-form-container > p {
-    color: #666;
+    color: var(--text-hint, #666);
     margin-bottom: 30px;
     font-size: 16px;
 }
@@ -46,19 +46,21 @@
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--form-label-color, #1a1a2e);
     font-size: 14px;
 }
 
 .form-input {
     width: 100%;
     padding: 15px 20px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--form-border-color, #e0e0e0);
     border-radius: 8px;
     font-size: 16px;
     font-family: inherit;
     transition: all 0.3s ease;
     box-sizing: border-box;
+    background: var(--input-bg, #fff);
+    color: var(--text-color, #333);
 }
 
 .form-input:focus {
@@ -119,11 +121,11 @@
 .form-footer {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--form-border-color, #e0e0e0);
 }
 
 .form-footer p {
-    color: #666;
+    color: var(--form-footer-text, #666);
     font-size: 14px;
 }
 
