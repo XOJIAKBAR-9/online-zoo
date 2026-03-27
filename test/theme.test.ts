@@ -1,6 +1,14 @@
 import { ThemeManager } from '../src/components/theme';
 
 describe('ThemeManager', () => {
+  beforeAll(() => {
+    (global as any).MutationObserver = class {
+      constructor() {}
+      disconnect() {}
+      observe() {}
+    };
+  });
+
   beforeEach(() => {
     document.documentElement.removeAttribute('data-theme');
     localStorage.clear();

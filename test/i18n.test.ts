@@ -2,6 +2,14 @@ import { LanguageManager } from '../src/components/i18n';
 import translations from '../src/data/translations';
 
 describe('LanguageManager', () => {
+  beforeAll(() => {
+    (global as any).MutationObserver = class {
+      constructor() {}
+      disconnect() {}
+      observe() {}
+    };
+  });
+
   beforeEach(() => {
     document.documentElement.removeAttribute('lang');
     localStorage.clear();

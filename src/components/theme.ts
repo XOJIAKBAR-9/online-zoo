@@ -1,15 +1,3 @@
-/**
- * ThemeManager – handles dark / light mode toggle with localStorage persistence.
- *
- * State management:
- *  • Reads the saved theme from localStorage("theme") on construction.
- *  • Applies the theme by setting `document.documentElement.dataset.theme`.
- *  • Swaps the toggle-button icon (🌙 ↔ ☀️).
- *  • Persists the choice to localStorage on every toggle.
- *  • Uses MutationObserver to bind the toggle button even when the header
- *    is loaded dynamically via fetch on sub-pages.
- */
-
 type Theme = 'light' | 'dark';
 
 export class ThemeManager {
