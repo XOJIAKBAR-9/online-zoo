@@ -1,0 +1,29 @@
+<!-- Feedback Modal Overlay -->
+<div class="feedback-overlay" id="feedbackOverlay">
+  <div class="feedback-modal">
+    <button class="feedback-close" id="feedbackClose" aria-label="Close Feedback Modal">✕</button>
+    <div class="feedback-content">
+      <h2 class="feedback-title" data-i18n="feedback.title">Leave Feedback</h2>
+      <p class="feedback-desc" data-i18n="feedback.desc">Please share your thoughts below.</p>
+      
+      <form class="feedback-form" id="feedbackForm">
+        <div class="form-group">
+          <label for="feedbackName" data-i18n="ph.feedbackName">Name</label>
+          <input type="text" id="feedbackName" name="name" required data-i18n-ph="ph.feedbackName" placeholder="Name" />
+        </div>
+        
+        <div class="form-group">
+          <label for="feedbackSurname" data-i18n="ph.feedbackSurname">Surname</label>
+          <input type="text" id="feedbackSurname" name="surname" required data-i18n-ph="ph.feedbackSurname" placeholder="Surname" />
+        </div>
+        
+        <div class="form-group">
+          <label for="feedbackMessage" data-i18n="ph.feedbackMessage">Message</label>
+          <textarea id="feedbackMessage" name="message" rows="4" required data-i18n-ph="ph.feedbackMessage" placeholder="Write your message here..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn-feedback-submit" data-i18n="feedback.submit">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+</div>

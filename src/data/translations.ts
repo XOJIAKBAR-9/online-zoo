@@ -152,6 +152,13 @@ const translations: Record<string, TranslationEntry> = {
   'ph.enterEmail':     { en: 'Enter your email', ru: 'Введите ваш email', uz: 'Elektron pochtangizni kiriting' },
   'ph.enterSubject':   { en: 'Enter the subject', ru: 'Введите тему', uz: 'Mavzuni kiriting' },
   'ph.enterMessage':   { en: 'Enter your message', ru: 'Введите сообщение', uz: 'Xabaringizni kiriting' },
+  /* ── Feedback Modal ───────────────────────────── */
+  'feedback.title':    { en: 'Leave Feedback', ru: 'Оставить отзыв', uz: 'Fikr-mulohaza qoldiring' },
+  'feedback.desc':     { en: 'Please share your thoughts below.', ru: 'Пожалуйста, поделитесь своими мыслями ниже.', uz: 'Iltimos, o\'z fikringizni quyida yozib qoldiring.' },
+  'ph.feedbackName':   { en: 'Name', ru: 'Имя', uz: 'Ism' },
+  'ph.feedbackSurname':{ en: 'Surname', ru: 'Фамилия', uz: 'Familiya' },
+  'ph.feedbackMessage':{ en: 'Write your message here...', ru: 'Напишите ваше сообщение здесь...', uz: 'Xabaringizni bu yerga yozing...' },
+  'feedback.submit':   { en: 'SUBMIT', ru: 'ОТПРАВИТЬ', uz: 'YUBORISH' },
 };
 
 export default translations;
