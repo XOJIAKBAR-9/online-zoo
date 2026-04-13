@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation | Online Zoo</title>
+    <link rel="stylesheet" href="../components/theme-variables.css">
+    <link rel="stylesheet" href="../components/header.style.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="../../dist/components/theme.js" defer></script>
+    <script type="module" src="../../dist/components/i18n.js" defer></script>
+    <script src="../../dist/components/header.js" defer></script>
+    <script src="../../dist/pages/donation.js" defer></script>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <div id="header-placeholder"></div>
+
+    <!-- Donation Modal Overlay -->
+    <div class="modal-overlay" id="donationModal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+            <!-- Hero image -->
+            <div class="modal__hero">
+                <img
+                    src="/assets/images/image 129.png"
+                    alt="Together we care, save and protect wildlife"
+                    class="modal__hero-img"
+                />
+                <button class="modal__close" id="closeModalBtn" aria-label="Close donation modal">×</button>
+            </div>
+
+            <!-- Text + buttons -->
+            <div class="modal__body">
+                <h2 class="modal__title" id="modalTitle" data-i18n="modal.title">
+                    Together We Care,<br>Save and Protect!
+                </h2>
+
+                <p class="modal__description" data-i18n="modal.desc">
+                    Your most generous gift not only cares for countless animals,
+                    but it also offers hope and a vital lifeline to the world's most
+                    endangered wildlife relying on us to survive.
+                </p>
+
+                <div class="modal__buttons">
+                    <button class="btn-donation" data-amount="20">$20</button>
+                    <button class="btn-donation" data-amount="30">$30</button>
+                    <button class="btn-donation" data-amount="50">$50</button>
+                    <button class="btn-donation" data-amount="80">$80</button>
+                    <button class="btn-donation" data-amount="100">$100</button>
+                    <button class="btn-donation btn-donation--other" id="customAmountBtn" data-amount="custom" data-i18n="modal.other">Other Amount</button>
+                </div>
+
+                <!-- Custom amount input (hidden by default) -->
+                <div class="custom-amount-section" style="display: none;">
+                    <input
+                        type="number"
+                        class="custom-amount-input"
+                        placeholder="Enter amount" data-i18n-ph="ph.enterAmount"
+                        min="1"
+                        max="999999"
+                    />
+                    <button class="btn-custom-submit" data-i18n="modal.customSubmit">DONATE →</button>
+                    <button class="btn-custom-cancel" data-i18n="modal.customCancel">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Backdrop for close -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+</body>
+</html>

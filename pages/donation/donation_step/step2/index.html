@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation - Step 2: Billing Information</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="../../../../dist/pages/donation/step2.js" defer></script>
+  </head>
+  <body>
+    <div class="step-container">
+      <!-- Step 2 Form -->
+      <div class="step-form step-2">
+        <div class="form-card">
+          <div class="form-header">
+            <h2>Make Your Donation</h2>
+          </div>
+          
+          <form class="donation-form" id="donationStep2Form">
+            <div class="form-body">
+              <div class="billing-header">Billing Information:</div>
+              <hr class="divider" />
+
+              <div class="form-group">
+                <label><span class="required-asterisk">*</span>Your Name</label>
+                <input type="text" id="step2Name" placeholder="First and last name" />
+              </div>
+
+              <div class="form-group">
+                <label><span class="required-asterisk">*</span>Your Email Address</label>
+                <input type="email" id="step2Email" placeholder="Enter your email" />
+              </div>
+
+              <p class="disclaimer">
+                You will receive emails from the Online Zoo, including updates and news<br />
+                on the latest discoveries and translations. You can unsubscribe at any time.
+              </p>
+            </div>
+
+            <div class="form-footer">
+              <div class="pagination">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot empty"></div>
+              </div>
+
+              <button type="button" class="step2-back-link" id="backBtn">Back</button>
+
+              <div class="next-wrapper">
+                <button type="button" class="step2-next-btn" id="nextBtn2">
+                  NEXT <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

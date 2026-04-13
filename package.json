@@ -4,8 +4,11 @@
   "description": "Online Zoo - Watch Your Favorite Animal Online",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server --port=3000",
-    "start": "live-server"
+    "dev": "npx live-server --port=3000",
+    "start": "live-server",
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
   },
   "keywords": [
     "zoo",
@@ -15,6 +18,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "@eslint/js": "^10.0.1",
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.3",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "live-server": "^1.2.2",
+    "openapi-typescript": "^7.13.0",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
   }
 }

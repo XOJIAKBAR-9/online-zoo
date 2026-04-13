@@ -1,0 +1,128 @@
+/* Feedback Modal Styles */
+
+.feedback-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.feedback-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.feedback-modal {
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #333333);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 40px 30px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px) scale(0.95);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.feedback-overlay.active .feedback-modal {
+  transform: translateY(0) scale(1);
+}
+
+.feedback-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--text-secondary, #666666);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.feedback-close:hover {
+  color: var(--text-accent, #ff7e00); /* Pet-like orange aesthetic matching the design */
+}
+
+.feedback-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.feedback-desc {
+  font-size: 16px;
+  color: var(--text-secondary, #666666);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-form .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.feedback-form label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary, #333333);
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: 8px;
+  background: var(--bg-secondary, #f9f9f9);
+  color: var(--text-primary, #333333);
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.3s, color 0.3s;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: var(--text-accent, #ff7e00);
+  box-shadow: 0 0 0 3px rgba(255, 126, 0, 0.1);
+}
+
+.btn-feedback-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--bg-btn-primary, linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%));
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: filter 0.2s;
+}
+
+.btn-feedback-submit:hover {
+  filter: brightness(1.1);
+}

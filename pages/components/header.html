@@ -3,32 +3,39 @@
     <div class="nav-wrapper">
       <div class="nav-item-container">
         <img
-          src="../../assets/icons/Logo.png"
+          src="/assets/icons/Logo.png"
           alt="Online Zoo Logo"
           class="logo-img"
         />
       </div>
       <div class="nav-item-container">
         <nav class="nav-menu">
-          <a href="/pages/landing/index.html" class="nav-link">ABOUT</a>
-          <a href="/pages/map/index.html" class="nav-link">MAP</a>
-          <a href="/pages/livezoo/index.html" class="nav-link">ZOOS</a>
-          <a href="/pages/contact_us/index.html" class="nav-link">CONTACT US</a>
+          <a href="/index.html" class="nav-link" data-i18n="nav.about">ABOUT</a>
+          <a href="/pages/map/index.html" class="nav-link" data-i18n="nav.map">MAP</a>
+          <a href="/pages/livezoo/index.html" class="nav-link" data-i18n="nav.zoos">ZOOS</a>
+          <a href="/pages/contact_us/index.html" class="nav-link" data-i18n="nav.contact">CONTACT US</a>
           <a
             href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&p=f&t=2K0kCjfsJ31ypZT5-0"
             class="nav-link"
             target="_blank"
             rel="noopener noreferrer"
+            data-i18n="nav.design"
           >
             DESIGN
           </a>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span class="theme-icon" id="theme-icon">🌙</span>
+          </button>
+          <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Toggle language">
+            <span class="lang-label" id="lang-label">RU</span>
+          </button>
         </nav>
       </div>
 
       <div class="nav-item-container social-placeholder" aria-hidden="true">
         <a href="https://www.youtube.com/" target="_blank">
           <img
-            src="../../assets/icons/YouTube.png"
+            src="/assets/icons/YouTube.png"
             alt="YouTube Icon"
             class="social-icon"
           />
@@ -36,7 +43,7 @@
 
         <a href="https://www.instagram.com/" target="_blank">
           <img
-            src="../../assets/icons/Instagram.png"
+            src="/assets/icons/Instagram.png"
             alt="Instagram Icon"
             class="social-icon"
           />
@@ -44,11 +51,26 @@
 
         <a href="https://www.facebook.com/" target="_blank">
           <img
-            src="../../assets/icons/Facebook.png"
+            src="/assets/icons/Facebook.png"
             alt="Facebook Icon"
             class="social-icon"
           />
         </a>
+      </div>
+
+      <div class="nav-item-container user-container">
+        <button
+          class="user-icon-btn"
+          id="user-icon-btn"
+        >
+          <img
+            src="/assets/icons/User.png"
+            alt="User Icon"
+            class="user-icon"
+            id="user-avatar"
+          />
+          <span class="user-name" id="user-name" style="display: none"></span>
+      </button>
       </div>
     </div>
   </div>

@@ -1,0 +1,84 @@
+/* ══════════════════════════════════════════════════════════════
+   Shared Theme Variables — include on EVERY page
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Brand colours (unchanged between themes) */
+  --primary-color: #ff9900;
+  --secondary-color: #009999;
+
+  /* Theme-sensitive tokens — LIGHT values */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --bg-tertiary: #f4f4f4;
+  --light-color: #f5f5f5;
+  --dark-color: #1a1a2e;
+  --text-color: #333;
+  --text-muted: #555;
+  --text-hint: #666;
+  --card-bg: #2c1e50;
+  --header-bg: #F58021;
+  --nav-link-color: #000;
+  --testimonial-card-bg: #ffffff;
+  --border-color: #f0f0f0;
+  --modal-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #666;
+  --footer-bg: #1a1a2e;
+  --sidebar-bg: #2e154b;
+  --form-card-bg: #ffffff;
+  --form-label-color: #1a1a2e;
+  --form-border-color: #e0e0e0;
+  --form-footer-text: #666;
+  --info-card-bg: #ffffff;
+  --info-card-text: #333;
+}
+
+/* ── Dark theme overrides ────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-tertiary: #16213e;
+  --light-color: #16213e;
+  --dark-color: #e0e0e0;
+  --text-color: #e0e0e0;
+  --text-muted: #aaaaaa;
+  --text-hint: #999999;
+  --card-bg: #0f3460;
+  --header-bg: #2c1e50;
+  --nav-link-color: #e0e0e0;
+  --testimonial-card-bg: #1a1a3e;
+  --border-color: #2a2a4a;
+  --modal-bg: #16213e;
+  --input-bg: #1a1a2e;
+  --input-border: #444;
+  --footer-bg: #0a0a1a;
+  --sidebar-bg: #0f3460;
+  --form-card-bg: #16213e;
+  --form-label-color: #e0e0e0;
+  --form-border-color: #444;
+  --form-footer-text: #aaa;
+  --info-card-bg: #16213e;
+  --info-card-text: #e0e0e0;
+}
+
+/* Smooth transition when toggling themes */
+body,
+.header,
+.footer,
+.modal,
+.sidebar,
+.content,
+.map-section,
+.contact-section,
+.signin-section,
+.register-section,
+.did-you-know-card,
+.animal-description,
+.donation,
+.signin-form-container,
+.register-form-container,
+.feed-card,
+.testimonial-card {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}

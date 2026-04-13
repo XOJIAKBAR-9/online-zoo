@@ -2,53 +2,70 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* Header Styles */
 .header {
-    background-color: #F58021;
+    background-color: var(--header-bg, #F58021);
     padding: 20px 0;
     top: 0;
     z-index: 100;
     min-height: 80px;
     display: flex;
     align-items: center;
+    width: 100%;
+    transition: background-color 0.35s ease;
 }
 
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*  */
-    min-width: 600px;
+    width: 100%;
+    gap: 20px;
 }
 
 .nav-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 20px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-item-container {
-    flex: 1;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
 }
+
+.nav-item-container:nth-child(2) {
+    flex: 1;
+    justify-content: center;
+}
+
 .nav-item-container:first-child {
-    margin-right: 170px;
+    margin-right: 30px;
 }
 
 .nav-item-container:last-child {
-    margin-left: 170px;
+    margin-left: auto;
 }
 
 .nav-link {
     text-decoration: none;
-    color: transparent;
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
     cursor: pointer;
-    color: #000;
+    color: var(--nav-link-color, #000);
     margin: 0 5px;
     min-width: 90px;
 }
@@ -64,4 +81,129 @@
 .social-placeholder {
     display: flex;
     flex-direction: row;
+}
+
+/* User Icon and Name Styles */
+.user-container {
+    position: relative;
+    margin-left: 20px;
+}
+
+.user-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.user-icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--nav-link-color, #000);
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-name:hover {
+    background-color: rgba(255, 153, 0, 0.1);
+}
+/* Donate Button Styles */
+.btn-donate {
+    background: #2A9D8F;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 15px;
+}
+
+.btn-donate:hover {
+    background: #21867a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(42, 157, 143, 0.3);
+}
+
+.btn-donate:active {
+    transform: translateY(0);
+}
+
+/* ── Theme Toggle Button ────────────────────────── */
+.theme-toggle-btn {
+    background: none;
+    border: 2px solid var(--nav-link-color, #000);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 6px;
+    transition: transform 0.25s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.15);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.theme-icon {
+    font-size: 18px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* ── Language Toggle Button ─────────────────────── */
+.lang-toggle-btn {
+    background: none;
+    border: 2px solid var(--nav-link-color, #000);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 6px;
+    transition: transform 0.25s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.lang-toggle-btn:hover {
+    transform: scale(1.15);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.lang-label {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+    color: var(--nav-link-color, #000);
+    letter-spacing: 0.5px;
 }
